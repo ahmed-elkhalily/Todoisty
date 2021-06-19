@@ -1,6 +1,7 @@
+import React from 'react';
 import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
 
-export const Header = () => (
+const Header = () => (
   <header>
     <nav>
       <div className="logo">
@@ -17,3 +18,4 @@ export const Header = () => (
     </nav>
   </header>
 );
+export default Header;

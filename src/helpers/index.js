@@ -1,4 +1,6 @@
-import { collatedDataTitle } from '../constants/index';
+import collatedDataTitle from '../constants/index';
 
-export const collatedTaskExists = (sellectedProject) =>
+const collatedTaskExists = (sellectedProject) =>
   collatedDataTitle.find((data) => data.key === sellectedProject);
+
+export default collatedTaskExists;

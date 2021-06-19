@@ -1,7 +1,8 @@
+import React from 'react';
 import { useTask } from '../../../hooks/index';
-import { CheckBox } from '../checkbox/Checkbox';
+import CheckBox from '../checkbox/Checkbox';
 
-export const Tasks = () => {
+const Tasks = () => {
   const { tasks } = useTask('1');
   console.log(tasks);
   return (
@@ -15,3 +16,4 @@ export const Tasks = () => {
     </ul>
   );
 };
+export default Tasks;

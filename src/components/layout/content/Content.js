@@ -1,9 +1,11 @@
-import { Sidebar } from '../sidebar/Sidebar';
-import { Tasks } from '../tasks/Tasks';
+import React from 'react';
+import Sidebar from '../sidebar/Sidebar';
+import Tasks from '../tasks/Tasks';
 
-export const Content = () => (
+const Content = () => (
   <div>
     <Sidebar />
     <Tasks />
   </div>
 );
+export default Content;

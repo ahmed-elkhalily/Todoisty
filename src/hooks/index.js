@@ -1,7 +1,7 @@
-import { firestore } from '../firebase';
 import { useState, useEffect } from 'react';
-import { collatedTaskExists } from '../helpers/index';
 import moment from 'moment';
+import firestore from '../firebase';
+import collatedTaskExists from '../helpers/index';
 
 // getTasks custom HOOKs
 export const useTask = (selectedProject) => {
@@ -10,19 +10,13 @@ export const useTask = (selectedProject) => {
   const [archived, setArchived] = useState([]);
   // useEffect HOOKS
   useEffect(() => {
-    let unsubscribe = firestore
-      .collection('tasks')
-      .where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT');
+    let unsubscribe = firestore.collection('tasks').where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT');
 
     unsubscribe =
       selectedProject && !collatedTaskExists(selectedProject)
         ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
         : selectedProject === 'today'
-        ? (unsubscribe = unsubscribe.where(
-            'date',
-            '==',
-            moment().format('dd/mm/yyyy')
-          ))
+        ? (unsubscribe = unsubscribe.where('date', '==', moment().format('dd/mm/yyyy')))
         : selectedProject === 'inbox' || selectedProject === 0
         ? (unsubscribe = unsubscribe.where('date', '==', '')) // where("projectid", "==", "0")
         : unsubscribe;
@@ -53,7 +47,7 @@ export const useProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    //effect
+    // effect
     const unsubscribe = firestore
       .collection('projects')
       .where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT')

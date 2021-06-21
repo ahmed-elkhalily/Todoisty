@@ -1,6 +1,6 @@
 import React from 'react';
-import Content from './components/layout/Content';
-import Header from './components/layout/Header';
+import Body from './components/layout/body/Body';
+import Header from './components/layout/header/Header';
 import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <SelectedProjectProvider>
         <div className="App">
           <Header />
-          <Content />
+          <Body />
         </div>
       </SelectedProjectProvider>
     </ProjectsProvider>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
+import './header.scss';
 
 const Header = () => (
   <header data-testid="header">

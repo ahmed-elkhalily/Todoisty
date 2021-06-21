@@ -1,5 +1,6 @@
 import React from 'react';
-import firestore from '../firebase';
+import firestore from '../../firebase';
+import './checkbox.scss';
 
 const CheckBox = ({ id }) => {
   const ArchivedAction = () => {

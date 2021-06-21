@@ -1,6 +1,7 @@
 import React from 'react';
-import { UseSelectedProjectValue } from '../context';
-import IndividualProject from './IndividualProject';
+import { UseSelectedProjectValue } from '../../context';
+import IndividualProject from '../indvdl/IndividualProject';
+import './projects.scss';
 
 const Project = () => {
   const { projects } = UseSelectedProjectValue();

@@ -1,0 +1,8 @@
+@import '../../../assets/variables';
+.body{    
+    display: flex;
+    max-width: 922px;
+    height: calc(100vh - 44px);
+    justify-content: space-between;
+    margin: auto;
+}

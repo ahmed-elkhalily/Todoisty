@@ -1,6 +1,6 @@
 import React from 'react';
-import { useProjectsValue, UseSelectedProjectValue } from '../../../context';
-import IndividualProject from '../../IndividualProject';
+import { UseSelectedProjectValue } from '../context';
+import IndividualProject from './IndividualProject';
 
 const Project = () => {
   const { projects } = UseSelectedProjectValue();

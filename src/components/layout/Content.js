@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../sidebar/Sidebar';
-import Tasks from '../tasks/Tasks';
+import Sidebar from './Sidebar';
+import Tasks from '../Tasks';
 
 const Content = () => (
   <div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Content from './components/layout/content/Content';
-import Header from './components/layout/header/Header';
+import Content from './components/layout/Content';
+import Header from './components/layout/Header';
 import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 function App() {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaInbox, FaChevronDown, FaRegCalendarAlt, FaCalendarDay } from 'react-icons/fa';
-import Project from '../project/Project';
+import Projects from '../Projects';
 
 const Sidebar = () => {
   const [selected, setSelected] = useState('inbox');
@@ -24,7 +24,7 @@ const Sidebar = () => {
           <span>projects</span>
         </li>
       </ul>
-      <Project />
+      <Projects />
     </div>
   );
 };

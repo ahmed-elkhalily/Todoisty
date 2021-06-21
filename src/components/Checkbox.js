@@ -1,5 +1,5 @@
 import React from 'react';
-import firestore from '../../../firebase';
+import firestore from '../firebase';
 
 const CheckBox = ({ id }) => {
   const ArchivedAction = () => {

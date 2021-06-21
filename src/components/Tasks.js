@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTask } from '../../../hooks/index';
-import CheckBox from '../checkbox/Checkbox';
+import { useTask } from '../hooks/index';
+import CheckBox from './Checkbox';
 
 const Tasks = () => {
   const { tasks } = useTask('1');

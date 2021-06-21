@@ -1,7 +1,5 @@
 import React from 'react';
 import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
-import Project from '../project/Project';
-import { useProjectsValue } from '../../../context';
 
 const Header = () => (
   <header data-testid="header">

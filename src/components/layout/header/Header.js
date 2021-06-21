@@ -1,17 +1,19 @@
 import React from 'react';
 import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
+import Project from '../project/Project';
+import { useProjectsValue } from '../../../context';
 
 const Header = () => (
-  <header>
+  <header data-testid="header">
     <nav>
       <div className="logo">
         <img src="./images/logo.png" alt="logo" title="logo" />
       </div>
       <ul className="menu">
-        <li>
+        <li data-testid="quick-add-task-action">
           <FaPlus />
         </li>
-        <li>
+        <li data-testid="dark-mode-action">
           <FaPizzaSlice />
         </li>
       </ul>

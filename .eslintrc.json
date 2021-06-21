@@ -19,7 +19,7 @@
     "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
     "no-nested-ternary": 0,
-    "no-undef": ["error", {"document": false}]
+    "no-undef": [0]
 
   }
 }

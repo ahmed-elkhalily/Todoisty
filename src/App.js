@@ -1,13 +1,18 @@
 import React from 'react';
 import Content from './components/layout/content/Content';
 import Header from './components/layout/header/Header';
+import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Content />
-    </div>
+    <ProjectsProvider>
+      <SelectedProjectProvider>
+        <div className="App">
+          <Header />
+          <Content />
+        </div>
+      </SelectedProjectProvider>
+    </ProjectsProvider>
   );
 }
 

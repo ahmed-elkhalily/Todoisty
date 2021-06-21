@@ -52,8 +52,7 @@ export const useProjects = () => {
       .collection('projects')
       .where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT')
       .orderBy('projectId')
-      .get()
-      .then((snapshot) => {
+      .onSnapshot((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
           id: project.id,
           ...project.data(),
@@ -63,7 +62,6 @@ export const useProjects = () => {
           setProjects(allProjects);
         }
       });
-
     // clear
     return () => unsubscribe();
   }, [projects]);

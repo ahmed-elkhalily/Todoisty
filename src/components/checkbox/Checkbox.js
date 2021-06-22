@@ -11,13 +11,13 @@ const CheckBox = ({ id }) => {
 
   return (
     <div
-      className="chekbox__holder"
+      className="chekbox"
       onClick={() => ArchivedAction()}
       role="button"
       tabIndex={0}
       onKeyPress={() => ArchivedAction()}
     >
-      <span className="checkbox" />
+      <span className="checkbox__item" />
     </div>
   );
 };

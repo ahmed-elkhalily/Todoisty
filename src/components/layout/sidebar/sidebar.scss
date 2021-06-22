@@ -4,23 +4,34 @@
   background: #fafafa;
   color: $text-black;
   border-right: $generic-border;
+  flex-grow: 0.2;
+
   &__menu{
     padding-top: 10px;
-    .item {
-      padding: 10px 50px 10px 10px;
-      font-size: 18px;
-      font-weight: lighter;
-      display: flex;
-      align-items: center;
-      svg {
-        color: #545454;
-        width: 24px;
-        height: 24px; 
-      }
-      span{
-        display: inline-block;
-        margin-left: 7px;
-      }
+  }
+
+  &__item {
+    padding: 10px 50px 10px 10px;
+    font-size: 18px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: $sidebar-hover-color;
+      border-radius: 5px;
+    }
+    
+    svg {
+      color: #545454;
+      width: 24px;
+      height: 24px; 
+    }
+
+    span{
+      display: inline-block;
+      margin-left: 7px;
     }
   }
 }

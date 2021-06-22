@@ -3,16 +3,16 @@ import { FaPizzaSlice, FaPlus } from 'react-icons/fa';
 import './header.scss';
 
 const Header = () => (
-  <header data-testid="header">
-    <nav>
-      <div className="logo">
+  <header className="header" data-testid="header">
+    <nav className="nav">
+      <div className="nav__logo">
         <img src="./images/logo.png" alt="logo" title="logo" />
       </div>
-      <ul className="menu">
-        <li data-testid="quick-add-task-action">
+      <ul className="nav__menu">
+        <li className="nav__item" data-testid="quick-add-task-action">
           <FaPlus />
         </li>
-        <li data-testid="dark-mode-action">
+        <li className="nav__item" data-testid="dark-mode-action">
           <FaPizzaSlice />
         </li>
       </ul>

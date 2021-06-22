@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
 import firestore from '../../firebase';
-import './individualProject.scss';
+import './project.scss';
 
 const IndividualProject = ({ project }) => {
   const [showDeleteTab, setShowDeleteTab] = useState(false);
@@ -19,30 +19,37 @@ const IndividualProject = ({ project }) => {
   };
   return (
     <>
-      <span className="ind-project__dot">•</span>
-      <span className="ind-project__name">{project.name}</span>
-      <span
-        className="ind-project__delete"
+      <div className="single-project__name">
+        <span className="dot">•</span>
+        <span className="name">{project.name}</span>
+      </div>
+      <div
+        className="single-project__delete-icon"
         onClick={() => setShowDeleteTab(!showDeleteTab)}
         onKeyDown={() => setShowDeleteTab(!showDeleteTab)}
         role="button"
         tabIndex="0"
       >
         <BsTrash />
-      </span>
-      <div className="ind-project__delete-confirm">
-        <div className="ind-project__delete-cancel" />
-        <p>confirm delete project</p>
+      </div>
+      <div className={`single-project__delete-confirm ${!showDeleteTab ? 'hidden' : 'show'}`}>
+        <p className="message">
+          confirm <strong>{project.name}</strong> project
+        </p>
         <div>
           <button
             onClick={() => deleteProject(project.id)}
-            className="ind-project__delete-remove"
+            className="btn btn--remove"
             type="button"
             data-testid="project-delete"
           >
             delete
           </button>
-          <button type="button" onClick={() => sethowDeleteTab(!showDeleteTab)}>
+          <button
+            className="btn btn--default"
+            type="button"
+            onClick={() => setShowDeleteTab(!showDeleteTab)}
+          >
             cancel
           </button>
         </div>

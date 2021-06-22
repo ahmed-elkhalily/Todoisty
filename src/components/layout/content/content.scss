@@ -1,5 +1,9 @@
+@import "../../../assets/variables";
+
 .content{
-  border: 1px solid red;
-  flex-grow: 1;
+  flex-grow: 2;
+  padding: 20px;
   background: #fff;
+  color:$text-black;
+  font-size: 18px;
 }

@@ -9,19 +9,19 @@ import './sidebar.scss';
 const Sidebar = () => (
   <div className="sidebar">
     <ul className="sidebar__menu">
-      <li className="item">
+      <li className="sidebar__item">
         <BsInbox />
         <span>Inbox</span>
       </li>
-      <li className="item">
+      <li className="sidebar__item">
         <RiCalendarEventLine />
         <span>Today</span>
       </li>
-      <li className="item">
+      <li className="sidebar__item">
         <FaRegCalendarAlt />
         <span>Next 7 days</span>
       </li>
-      <li className="item">
+      <li className="sidebar__item">
         <BiChevronDown />
         <span>projects</span>
       </li>

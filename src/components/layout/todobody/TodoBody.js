@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from '../sidebar/Sidebar';
 import Content from '../content/Content';
-import './body.scss';
+import './todoBody.scss';
 
 const Body = () => (
-  <div className="body">
+  <div className="todo-body">
     <Sidebar />
     <Content />
   </div>

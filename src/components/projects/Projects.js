@@ -1,19 +1,24 @@
 import React from 'react';
 import { UseSelectedProjectValue } from '../../context';
-import IndividualProject from '../indvdl/IndividualProject';
+import Project from '../project/project';
 import './projects.scss';
 
-const Project = () => {
+const Projects = () => {
   const { projects } = UseSelectedProjectValue();
   return (
-    <ul>
+    <ul className="projects">
       {projects &&
         projects.map((project) => (
-          <li key={project.id} data-doc-id={project.id} data-testid="project-action">
-            <IndividualProject project={project} />
+          <li
+            className="single-project"
+            key={project.id}
+            data-doc-id={project.id}
+            data-testid="project-action"
+          >
+            <Project project={project} />
           </li>
         ))}
     </ul>
   );
 };
-export default Project;
+export default Projects;

@@ -1,0 +1,72 @@
+@import "../../assets/variables";
+.single-project {
+  cursor: pointer;
+  margin-top: 5px;
+  position: relative;
+  border-radius: 7px;
+  &:hover {
+    background: $sidebar-hover-color;
+    .single-project__delete-icon {
+      display: block;
+      svg{
+        width: 22px;
+        height: 22px;
+        color: $text-delete;
+      }
+    }
+  }
+
+  &__delete-icon {
+    display: none;
+  }
+
+  &__delete-confirm{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    background: #fafafa;
+    border: 1px solid gray;
+    padding: 5px 5px;
+    text-align: center;
+    z-index: 9999;
+    .message {
+      font-size: 15px;
+    }
+  }
+}
+.single-project__name {
+  .dot {
+    font-size: 18px;
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-size: 18px;
+  }
+}
+
+
+
+.btn {
+  padding: 5px 5px;
+  cursor: pointer;
+  &--default {
+    border: 1px solid gray;
+  }
+  &--remove {
+    border: 1px solid $text-delete;
+    color: $text-delete;
+    background: none;
+    margin-right: 5px;
+  }
+}
+
+.hidden{
+  display: none;
+}
+.show {
+  display: block;
+}

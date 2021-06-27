@@ -1,17 +1,16 @@
 import React from 'react';
-import { useTask } from '../../hooks/index';
+import { useTasksContextValues } from '../../context/index';
 import CheckBox from '../checkbox/Checkbox';
 import './tasks.scss';
 
 const Tasks = () => {
-  const { tasks } = useTask('1');
-  console.log(tasks);
+  const { tasks } = useTasksContextValues();
   return (
-    <ul>
+    <ul className="tasks-menu">
       {tasks.map((task) => (
-        <li key={task.id}>
+        <li className="tasks-menu__item" key={task.id}>
           <CheckBox id={task.id} />
-          <span>{task.name}</span>
+          <span className="tasks-menu__name">{task.name}</span>
         </li>
       ))}
     </ul>

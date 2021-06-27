@@ -8,6 +8,7 @@ export const useTask = (selectedProject) => {
   // setState HOOKS
   const [tasks, setTasks] = useState([]);
   const [archived, setArchived] = useState([]);
+  console.log(selectedProject);
   // useEffect HOOKS
   useEffect(() => {
     let unsubscribe = firestore.collection('tasks').where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT');
@@ -15,9 +16,9 @@ export const useTask = (selectedProject) => {
     unsubscribe =
       selectedProject && !collatedTaskExists(selectedProject)
         ? (unsubscribe = unsubscribe.where('projectId', '==', selectedProject))
-        : selectedProject === 'today'
+        : selectedProject === 'TODAY'
         ? (unsubscribe = unsubscribe.where('date', '==', moment().format('dd/mm/yyyy')))
-        : selectedProject === 'inbox' || selectedProject === 0
+        : selectedProject === 'INBOX' || selectedProject === 0
         ? (unsubscribe = unsubscribe.where('date', '==', '')) // where("projectid", "==", "0")
         : unsubscribe;
 
@@ -26,6 +27,7 @@ export const useTask = (selectedProject) => {
         id: task.id,
         ...task.data(),
       }));
+
       setTasks(
         selectedProject === 'NEXT_7'
           ? newTasks.filter(
@@ -35,8 +37,10 @@ export const useTask = (selectedProject) => {
             )
           : newTasks.filter((task) => task.archived !== true)
       );
+
       setArchived(newTasks.filter((task) => task.archived === true));
     });
+
     return () => unsubscribe();
   }, [selectedProject]);
 
@@ -47,23 +51,21 @@ export const useProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // effect
-    const unsubscribe = firestore
+    firestore
       .collection('projects')
       .where('userId', '==', 'gJTCIqlYbKlfjHJFvcRT')
       .orderBy('projectId')
-      .onSnapshot((snapshot) => {
+      .get()
+      .then((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
-          id: project.id,
           ...project.data(),
+          docId: project.id,
         }));
-        // check to change state
-        if (JSON.stringify(projects) !== JSON.stringify(allProjects)) {
+
+        if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
           setProjects(allProjects);
         }
       });
-    // clear
-    return () => unsubscribe();
   }, [projects]);
 
   return { projects, setProjects };

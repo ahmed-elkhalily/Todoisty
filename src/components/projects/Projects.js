@@ -1,21 +1,35 @@
 import React from 'react';
-import { UseSelectedProjectValue } from '../../context';
-import Project from '../project/project';
+// context
+import { useSelectedProjectValue, useProjectsValue, useTasksContextValues } from '../../context';
+// components
+import Project from '../project/Project';
 import './projects.scss';
 
 const Projects = () => {
-  const { projects } = UseSelectedProjectValue();
+  // const { selectedProject, setSelectedProject } = UseSelectedProjectValue();
+  const { projects } = useProjectsValue();
+  const { setSelectedProject } = useSelectedProjectValue();
+  const { setSelectTasks } = useTasksContextValues();
+  // console.log(selectedProject);
+  // const selectProject = (projectId) => {};
+  // console.log(projects);
   return (
     <ul className="projects">
       {projects &&
         projects.map((project) => (
-          <li
-            className="single-project"
-            key={project.id}
-            data-doc-id={project.id}
-            data-testid="project-action"
-          >
-            <Project project={project} />
+          <li key={project.docId} data-doc-id={project.id} data-testid="project-action">
+            <div
+              role="button"
+              onClick={() => {
+                setSelectedProject(project);
+                setSelectTasks(project.projectId);
+              }}
+              onKeyPress={() => setSelectedProject(project)}
+              tabIndex="0"
+              className="single-project"
+            >
+              <Project project={project} />
+            </div>
           </li>
         ))}
     </ul>

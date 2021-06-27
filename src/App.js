@@ -1,16 +1,18 @@
 import React from 'react';
 import TodoBody from './components/layout/todobody/TodoBody';
 import Header from './components/layout/header/Header';
-import { ProjectsProvider, SelectedProjectProvider } from './context';
+import { ProjectsProvider, SelectedProjectProvider, TasksProvider } from './context';
 
 function App() {
   return (
     <ProjectsProvider>
       <SelectedProjectProvider>
-        <div className="App">
-          <Header />
-          <TodoBody />
-        </div>
+        <TasksProvider>
+          <div className="App">
+            <Header />
+            <TodoBody />
+          </div>
+        </TasksProvider>
       </SelectedProjectProvider>
     </ProjectsProvider>
   );

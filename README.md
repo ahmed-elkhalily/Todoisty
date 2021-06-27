@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### some problems -> resolve on the code
+[] useProjects hooks keep repeat
+
+
+## 27/6/2021
+[] add checkbox on check the task.
+[] add [ inbox | next7days | today ] to the useTask hook. 
+[] add functionality to the projects section to open the project menu.
+[] add quick task component, functionality and style.
+[] add css styles to make the dots very beautiful.

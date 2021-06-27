@@ -3,7 +3,7 @@ import { BsTrash } from 'react-icons/bs';
 import firestore from '../../firebase';
 import './project.scss';
 
-const IndividualProject = ({ project }) => {
+const Project = ({ project }) => {
   const [showDeleteTab, setShowDeleteTab] = useState(false);
   const deleteProject = (projectId) => {
     firestore
@@ -34,7 +34,7 @@ const IndividualProject = ({ project }) => {
       </div>
       <div className={`single-project__delete-confirm ${!showDeleteTab ? 'hidden' : 'show'}`}>
         <p className="message">
-          confirm <strong>{project.name}</strong> project
+          remove <strong>{project.name}</strong> project.
         </p>
         <div>
           <button
@@ -57,4 +57,4 @@ const IndividualProject = ({ project }) => {
     </>
   );
 };
-export default IndividualProject;
+export default Project;
